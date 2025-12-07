@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="refresh" content="60">
+		<title>Web版 温度・湿度監視システム</title>
+		<style>
+			body { font-family: sans-serif; text-align: center; padding: 20px; }
+			img { border: 1px solid #ccc; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); }
+			.button {
+				display: inline-block;
+				padding: 10px 20px;
+				background-color: #007bff;
+				color: white;
+				text-decoration: none;
+				border-radius: 5px;
+				margin-bottom: 20px;
+			}
+			.button:hover { background-color: #0056b3; }
+		</style>
+	</head>
+
+	<body>
+		<h2>現在の温度・湿度グラフ (最新1時間)</h2>
+		
+		<a href="cgi-bin/update_graph.py" class="button">Update Graph</a>
+		
+		<div>
+			<img id="monitorGraph" src="monitor_graph.png" alt="Temperature and Humidity Graph" style="max-width: 100%; height: auto;">
+		</div>
+
+		<script>
+			// キャッシュ対策スクリプト
+			// ページ読み込み時に画像URLの後ろに現在時刻を追加して、必ず最新の画像を読み込ませる
+			window.onload = function() {
+				var img = document.getElementById('monitorGraph');
+				var timestamp = new Date().getTime();
+				img.src = "monitor_graph.png?" + timestamp;
+			}
+		</script>
+	</body>
+</html>

@@ -40,12 +40,6 @@ Raspberry PiとDHT11センサーを使用して、室内の温度・湿度を自
 * **Libraries:** Matplotlib, csv, datetime
 * **Web Server:** Apache (CGI対応) / Webブラウザ
 
-## 🚀 今後の展望
-現在、以下の機能拡張システムを構築中です。
-
-* **異常検知アラート機能:**
-    * 温度や湿度が設定された規定値（閾値）を外れた場合、Webサーバーから管理者へ異常検知メールを自動送信する機能を実装予定です。
-
 ## 📝 実行方法
 1. Webサーバー（Apacheなど）のCGIディレクトリに `update_graph.py` を配置し、実行権限を与えます。
 2. ドキュメントルートに `index.html` と `sample.csv` を配置します。
@@ -53,4 +47,5 @@ Raspberry PiとDHT11センサーを使用して、室内の温度・湿度を自
 
 ---
 Created by Gakuto Inoue
+
 
